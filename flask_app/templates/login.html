@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>
+        Register
+    </h1>
+    <form method="POST" action="/user/registration">
+        <div>
+            <label>
+                First name:
+            </label>
+            <input type="text" name="first_name" /> 
+            {%for message in get_flashed_messages( category_filter = ['error_registration_first_name'])%}
+                {{message}}
+            {%endfor%}
+        </div>
+        </div>
+        <div>
+            <label>
+                Last name:
+            </label>
+            <input type="text" name="last_name" />
+            {%for message in get_flashed_messages( category_filter = ['error_registration_last_name'])%}
+                {{message}}
+            {%endfor%}
+        </div>
+        </div>
+        <div>
+            <label>
+                Email:
+            </label>
+            <input type="text" name="email" /> 
+            {%for message in get_flashed_messages( category_filter = ['error_registration_email'])%}
+                {{message}}
+            {%endfor%}
+        </div>
+        </div>
+        <div>
+            <label>
+                Password:
+            </label>
+            <input type="password" name="password" />
+            {%for message in get_flashed_messages( category_filter = ['error_registration_password'])%}
+                {{message}}
+            {%endfor%}
+        </div>
+        </div>
+        <div>
+            <label>
+                Password confirmation:
+            </label>
+            <input type="password" name="password_confirmation" />
+            {%for message in get_flashed_messages( category_filter = ['error_registration_password_confirmation'])%}
+                {{message}}
+            {%endfor%}
+        </div>
+        <button>Submit</button>
+    </form>
+    <h1>
+        Login:
+    </h1>
+    <form method="POST" action="/user/login">
+        <div>
+            <label>
+                Email:
+            </label>
+            <input type="text" name="email" /> 
+        </div>
+        <div>
+            <label>
+                Password:
+            </label>
+            <input type="password" name="password" />
+            {%for message in get_flashed_messages( category_filter = ['error_registration_password_confirmation'])%}
+                {{message}}
+            {%endfor%}
+        </div>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
